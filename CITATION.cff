@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this code or these result files, please cite the article below and this archive."
+title: "Between-subject divergence without faster within-subject turnover but with frozen within-host strain drift in the gut microbiome of inflammatory bowel disease - analysis code and result files"
+version: v1.0.1
+date-released: '2026-11-14'
+license: MIT
+type: software
+doi: "10.5281/zenodo.24210660"  # concept DOI: always resolves to the latest version
+repository-code: "https://github.com/JunzhongWang/WJZ20261114-ibd-gut-microbiome"
+authors:
+  - family-names: Zhao
+    given-names: Zhaozhao
+  - family-names: Liang
+    given-names: Man
+  - family-names: Huang
+    given-names: Xiaoya
+  - family-names: Chen
+    given-names: Xiangyu
+  - family-names: Zhang
+    given-names: Jing
+  - family-names: Cheng
+    given-names: Chuan
+  - family-names: Wang
+    given-names: Junzhong
+keywords:
+  - inflammatory bowel disease
+  - gut microbiome
+  - metagenomics
+  - longitudinal cohort
+  - compositional distance
+  - Bray-Curtis
+  - strain-level SNV
+  - GT-Pro

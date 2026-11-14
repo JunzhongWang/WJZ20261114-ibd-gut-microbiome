@@ -2,8 +2,8 @@
 
 Analysis code, data tables and result files for the manuscript (Microbiome submission).
 
-**Version:**&#8203; v1.0.1 · **Released:**&#8203; 2026-11-14
-**Code:**&#8203; Python 3 (standard library; one analysis additionally uses NumPy) + three small R helpers + a GT-Pro cloud runbook · **License:**&#8203; MIT (code), CC BY 4.0 (derived tables and data matrices)
+**Version:** v1.0.1 · **Released:** 2026-11-14
+**Code:** Python 3 (standard library; one analysis additionally uses NumPy) + three small R helpers + a GT-Pro cloud runbook · **License:** MIT (code), CC BY 4.0 (derived tables and data matrices)
 
 ## 1. What this archive contains
 
@@ -29,7 +29,7 @@ Abundance and pathway profiles are curatedMetagenomicData v3 reprocessings (bioB
 
 ## 3. What is *not* included
 
-- **Raw GT-Pro output (32 GB, `gtpro/aws_out/`, `gtpro/gtpro_out/`)**&#8203; — per-SNV genotype calls for 1,886 metagenomes. The derived summaries in `results/ibd2/snv*.csv` are included; `gtpro/README.md` and `DEPLOY_aws.md` document how to regenerate them from the SRA runs of the two BioProjects using the GT-Pro catalogue.
+- **Raw GT-Pro output (32 GB, `gtpro/aws_out/`, `gtpro/gtpro_out/`)** — per-SNV genotype calls for 1,886 metagenomes. The derived summaries in `results/ibd2/snv*.csv` are included; `gtpro/README.md` and `DEPLOY_aws.md` document how to regenerate them from the SRA runs of the two BioProjects using the GT-Pro catalogue.
 - **curatedMetagenomicData pathway `.rda` caches** — `pipeline/fetch_pathways.py` re-downloads them from ExperimentHub; `data/<study>/pathway.tsv` is included directly, so this step is only needed to rebuild from source.
 
 ## 4. Run order
