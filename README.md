@@ -1,6 +1,6 @@
 # Data and code for: Between-subject divergence without faster within-subject turnover but with frozen within-host strain drift in the gut microbiome of inflammatory bowel disease — a matched-interval analysis in two longitudinal cohorts
 
-Analysis code, data tables and result files for the manuscript (mSystems submission).
+Analysis code, data tables and result files for the manuscript (Microbiome submission).
 
 **Version:** v1.0.0 · **Released:** 2026-11-14
 **Code:** Python 3 (standard library; one analysis additionally uses NumPy) + three small R helpers + a GT-Pro cloud runbook · **License:** MIT (code), CC BY 4.0 (derived tables and data matrices)
