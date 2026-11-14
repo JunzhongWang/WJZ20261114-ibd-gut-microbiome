@@ -2,15 +2,15 @@
 
 Analysis code, data tables and result files for the manuscript (Microbiome submission).
 
-**Version:** v1.0.0 · **Released:** 2026-11-14
-**Code:** Python 3 (standard library; one analysis additionally uses NumPy) + three small R helpers + a GT-Pro cloud runbook · **License:** MIT (code), CC BY 4.0 (derived tables and data matrices)
+**Version:**&#8203; v1.0.1 · **Released:**&#8203; 2026-11-14
+**Code:**&#8203; Python 3 (standard library; one analysis additionally uses NumPy) + three small R helpers + a GT-Pro cloud runbook · **License:**&#8203; MIT (code), CC BY 4.0 (derived tables and data matrices)
 
 ## 1. What this archive contains
 
 | Path | What it is |
 |---|---|
 | `pipeline/` | Analysis pipeline for every figure and table in the paper. `ibd_build_cohort.py` builds the matched-interval cohort from the public inputs; the remaining `ibd_*.py` scripts compute R (within/between-subject Bray–Curtis ratio), functional-layer results, strain-marker results, cross-layer contrasts and the SNV summaries; the `*_fig*.py` scripts draw the manuscript figures. `fetch_cmd3_direct.py` / `fetch_pathways.py` / `rda_extract*.R` reproduce the curatedMetagenomicData retrieval chain that produced `data/`. |
-| `gtpro/` | Runbook for the strain-level (SNV) extension: GT-Pro genotyping of 1,886 metagenomes against the 104M-variant catalogue on AWS Spot (see `gtpro/README.md`, `DEPLOY_aws.md`). Includes manifest design, filtering, aggregation, the self-test harness, cloud operation scripts (`aws/`) and the catalogue metadata tables. The 32 GB of raw GT-Pro output is **not** redistributed; `results/ibd2/snv*.csv` hold the derived summaries. |
+| `gtpro/` | Runbook for the strain-level (SNV) extension: GT-Pro genotyping of 1,886 metagenomes against the 53-million-variant catalogue (881 species, 20190723 release) on AWS Spot (see `gtpro/README.md`, `DEPLOY_aws.md`). Includes manifest design, filtering, aggregation, the self-test harness, cloud operation scripts (`aws/`) and the catalogue metadata tables. The 32 GB of raw GT-Pro output is **not** redistributed; `results/ibd2/snv*.csv` hold the derived summaries. |
 | `results/ibd2/` | Every numerical result cited in the manuscript: cohort tables, R per group and per interval band (`r_*.csv`, `marker_*.csv`, `functional_*.csv`), robustness checks (`robustness.csv`), SNV layer results (`snv*.csv`), flare/medication contrasts, cross-layer table, all figure sources (`figs/`, `png/`) and per-subject marker presence matrices (`marker/`). `README_snv.md` documents the SNV result files. |
 | `data/HMP_2019_ibdmdb/` | **Input data** for the Multi'omics cohort (PRJNA398089, cMD3 reprocessing): `species.csv`/`species.tsv` (samples × species, comma/tab), `meta.csv`, `pathway.tsv` (HUMAnN 3 pathway abundance) and the unstratified pathway extract. |
 | `data/HallAB_2017/` | Same files for the validation cohort (PRJNA385949). |
@@ -29,7 +29,7 @@ Abundance and pathway profiles are curatedMetagenomicData v3 reprocessings (bioB
 
 ## 3. What is *not* included
 
-- **Raw GT-Pro output (32 GB, `gtpro/aws_out/`, `gtpro/gtpro_out/`)** — per-SNV genotype calls for 1,886 metagenomes. The derived summaries in `results/ibd2/snv*.csv` are included; `gtpro/README.md` and `DEPLOY_aws.md` document how to regenerate them from the SRA runs of the two BioProjects using the GT-Pro catalogue.
+- **Raw GT-Pro output (32 GB, `gtpro/aws_out/`, `gtpro/gtpro_out/`)**&#8203; — per-SNV genotype calls for 1,886 metagenomes. The derived summaries in `results/ibd2/snv*.csv` are included; `gtpro/README.md` and `DEPLOY_aws.md` document how to regenerate them from the SRA runs of the two BioProjects using the GT-Pro catalogue.
 - **curatedMetagenomicData pathway `.rda` caches** — `pipeline/fetch_pathways.py` re-downloads them from ExperimentHub; `data/<study>/pathway.tsv` is included directly, so this step is only needed to rebuild from source.
 
 ## 4. Run order
